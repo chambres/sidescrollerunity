@@ -46,7 +46,7 @@ namespace Platformer
             {
                 if (isGrounded) animator.SetInteger("playerState", 0); // Turn on idle animation
             }
-            if(Input.GetKeyDown(KeyCode.Space) && isGrounded )
+            if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
             {
                 rigidbody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
             }
@@ -78,7 +78,7 @@ namespace Platformer
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if (other.gameObject.tag == "Enemy")
+            if (other.gameObject.tag == "Enemy" || other.gameObject.name == "spikes")
             {
                 deathState = true; // Say to GameManager that player is dead
             }
